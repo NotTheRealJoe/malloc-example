@@ -16,4 +16,6 @@ but for `calloc()` it would be
 calloc(16, sizeof(char));
 ```
 
+`calloc()` takes longer than `malloc()` due to the extra step of initializing the memory to zero, but the difference is tiny and is largely outweighed by the benefits for reliability if it is not guaranteed that the entire block of memory will be overwritten by an assignment.
+
 In this program, some memory is defined as a string and then freed. `malloc()` is then called, and the contents of the memory allocated by it are printed out as hex data. Note that some of the old data from the first part of the program that has already been freed is visible in the memory allocated by `malloc()`. Then, that memory is freed and `calloc()` is called. Note that even though `calloc()` is probably resuing the same memory we just freed, the contents is initialized to zeros.

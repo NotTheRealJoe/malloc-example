@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   strcpy(oldMem, "abcdefghjlkmnop");
   free(oldMem);
   
-  //malloc just allocates the memory and makes it available to the program. Previous contents are not cleared/
+  //malloc just allocates the memory and makes it available to the program. Previous contents are not cleared
   void *mallocAddr = malloc(16 * sizeof(char));
   hexDump("Malloc", mallocAddr, 16 * sizeof(char));
   free(mallocAddr);
